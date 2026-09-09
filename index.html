@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aldi Setiapuji | Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ===============================
+       ROOT & DARK MODE
+    =============================== */
+
+      :root {
+        --primary: #00d9ff;
+        --secondary: #6366f1;
+        --bg: #07111f;
+        --bg-secondary: #0d1726;
+        --card: rgba(18, 30, 48, 0.65);
+        --text: #ffffff;
+        --text-secondary: #a7b2c3;
+        --border: rgba(255, 255, 255, 0.1);
+      }
+
+      body.light-mode {
+        --bg: #f5f7fb;
+        --bg-secondary: #ffffff;
+        --card: rgba(255, 255, 255, 0.75);
+        --text: #172033;
+        --text-secondary: #5f6b7a;
+        --border: rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+        transition: 0.4s;
+      }
+      /* ===============================
+       BACKGROUND
+    =============================== */
+
+      .background {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.3;
+      }
+
+      .circle-1 {
+        width: 400px;
+        height: 400px;
+        background: var(--primary);
+        top: -150px;
+        left: -100px;
+      }
+
+      .circle-2 {
+        width: 350px;
+        height: 350px;
+        background: var(--secondary);
+        bottom: -100px;
+        right: -100px;
+      }
+      /* ===============================
+       NAVBAR
+    =============================== */
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(15px);
+        background: rgba(7, 17, 31, 0.7);
+        border-bottom: 1px solid var(--border);
+      }
+
+      body.light-mode header {
+        background: rgba(255, 255, 255, 0.75);
+      }
+
+      nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 18px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--text);
+      }
+
+      .logo span {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .theme-toggle {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .theme-toggle:hover {
+        transform: rotate(20deg);
+        color: var(--primary);
+      }
+      /* ===============================
+       HERO
+    =============================== */
+
+      .hero {
+        min-height: 100vh;
+        max-width: 1200px;
+        margin: auto;
+        padding: 120px 25px 60px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .hero-content {
+        animation: fadeRight 1s ease;
+      }
+
+      .hero-subtitle {
+        color: var(--primary);
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+        line-height: 1.15;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 span {
+        color: var(--primary);
+      }
+
+      .hero-description {
+        color: var(--text-secondary);
+        line-height: 1.9;
+        max-width: 600px;
+        margin-bottom: 30px;
+      }
+
+      .typing-container {
+        font-size: 20px;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      #typing {
+        color: var(--primary);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 14px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #07111f;
+        box-shadow: 0 10px 30px rgba(0, 217, 255, 0.25);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--border);
+        color: var(--text);
+        background: var(--card);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        transform: translateY(-5px);
+      }
+      /* ===============================
+       PROFILE IMAGE
+    =============================== */
+
+      .hero-image {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        animation: fadeLeft 1s ease;
+      }
+
+      .profile-container {
+        width: 350px;
+        height: 350px;
+        position: relative;
+      }
+
+      .profile-container::before {
+        content: "";
+        position: absolute;
+        inset: -12px;
+        border-radius: 50%;
+        background: linear-gradient(
+          45deg,
+          var(--primary),
+          var(--secondary),
+          var(--primary)
+        );
+        animation: rotateBorder 5s linear infinite;
+        z-index: -1;
+      }
+
+      .profile-container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 70px rgba(0, 217, 255, 0.25);
+      }
+
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        border: 8px solid var(--bg-secondary);
+      }
+      /* ===============================
+       SECTION
+    =============================== */
+
+      section {
+        padding: 100px 25px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 40px;
+      }
+
+      .section-title h2 span {
+        color: var(--primary);
+      }
+
+      .section-title p {
+        margin-top: 10px;
+        color: var(--text-secondary);
+      }
+      /* ===============================
+       ABOUT
+    =============================== */
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+      }
+
+      .glass-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 35px;
+        transition: 0.4s;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary);
+      }
+
+      .glass-card h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .glass-card p {
+        color: var(--text-secondary);
+        line-height: 1.9;
+      }
+
+      .info-list {
+        margin-top: 25px;
+      }
+
+      .info-list p {
+        margin-bottom: 12px;
+      }
+
+      .info-list strong {
+        color: var(--primary);
+      }
+      /* ===============================
+       SKILLS
+    =============================== */
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .skill-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        transition: 0.4s;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary);
+        box-shadow: 0 15px 40px rgba(0, 217, 255, 0.1);
+      }
+
+      .skill-card i {
+        font-size: 40px;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .skill-card h3 {
+        margin-bottom: 10px;
+      }
+
+      .skill-card p {
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+      /* ===============================
+       PROJECTS
+    =============================== */
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .project-card {
+        overflow: hidden;
+        border-radius: 20px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        transition: 0.4s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-12px);
+        border-color: var(--primary);
+      }
+      /* GAMBAR PROJECT */
+
+      .project-image {
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.5s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.1);
+      }
+
+      .project-content {
+        padding: 25px;
+      }
+
+      .project-content h3 {
+        margin-bottom: 12px;
+      }
+
+      .project-content p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .project-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      /* ===============================
+       CONTACT
+    =============================== */
+
+      .contact-box {
+        text-align: center;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .contact-box p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      .social-links {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-links a {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text);
+        background: var(--card);
+        border: 1px solid var(--border);
+        transition: 0.3s;
+      }
+
+      .social-links a:hover {
+        background: var(--primary);
+        color: #07111f;
+        transform: translateY(-7px);
+      }
+      /* ===============================
+       FOOTER
+    =============================== */
+
+      footer {
+        text-align: center;
+        padding: 30px 20px;
+        border-top: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+      /* ===============================
+       SCROLL ANIMATION
+    =============================== */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 0.8s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* ===============================
+       KEYFRAMES
+    =============================== */
+
+      @keyframes rotateBorder {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeRight {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeLeft {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      /* ===============================
+       RESPONSIVE
+    =============================== */
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-description {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-buttons {
+          justify-content: center;
+        }
+        .hero-image {
+          grid-row: 1;
+        }
+        .about-grid,
+        .skills-grid,
+        .projects-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+        .hero h1 {
+          font-size: 45px;
+        }
+        .profile-container {
+          width: 250px;
+          height: 250px;
+        }
+        .about-grid,
+        .skills-grid,
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .section-title h2 {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BACKGROUND -->
+    <div class="background">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header>
+      <nav>
+        <div class="logo">ALLL PORTFOLIO<span>.</span></div>
+
+        <ul class="nav-links">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#skills">Keahlian</a></li>
+          <li><a href="#projects">Project</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="hero-subtitle">HELLO, I'M</p>
+
+        <h1>
+          Aldi <br />
+          <span>Setiapuji</span>
+        </h1>
+
+        <div class="typing-container">
+          Saya seorang <span id="typing"></span>
+        </div>
+
+        <p class="hero-description">
+          Mahasiswa Teknik Informatika yang memiliki ketertarikan dalam
+          pengembangan website, teknologi Internet of Things, backend
+          development, dan berbagai solusi teknologi digital.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Lihat Project</a>
+          <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+        </div>
+      </div>
+
+      <!-- FOTO PROFIL -->
+      <div class="hero-image">
+        <div class="profile-container">
+          <img
+            src="img/bangal.jpeg"
+            alt="Foto Aldi Setiapuji"
+            class="profile-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tentang <span>Saya</span></h2>
+          <p>Mengenal saya lebih dekat</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card">
+            <h3><i class="fa-solid fa-user"></i> Siapa Saya?</h3>
+
+            <p>
+              Saya adalah mahasiswa Teknik Informatika yang memiliki minat dalam
+              dunia teknologi dan pengembangan sistem digital. Saya senang
+              mempelajari teknologi baru serta mengembangkan solusi untuk
+              berbagai permasalahan.
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <h3><i class="fa-solid fa-code"></i> Informasi</h3>
+
+            <div class="info-list">
+              <p><strong>Nama:</strong> Aldi Setiapuji</p>
+              <p><strong>Fakultas:</strong> Teknik Informatika</p>
+              <p><strong>Fokus:</strong> Web & IoT Development</p>
+              <p><strong>Status:</strong> Mahasiswa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <h2>Keahlian <span>Saya</span></h2>
+          <p>Teknologi yang saya pelajari dan gunakan</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fa-brands fa-html5"></i>
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, React dan Next.js.</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-solid fa-server"></i>
+            <h3>Backend</h3>
+            <p>Node.js, API, NestJS dan Database.</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-solid fa-microchip"></i>
+            <h3>Internet of Things</h3>
+            <p>Arduino, ESP32, RFID dan Sensor.</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Database</h3>
+            <p>PostgreSQL, MySQL dan pengolahan database.</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-brands fa-python"></i>
+            <h3>Python</h3>
+            <p>Python, OpenCV, dan Computer Vision.</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-solid fa-palette"></i>
+            <h3>UI Design</h3>
+            <p>Membuat tampilan website modern dan responsif.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT -->
+    <section id="projects" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <h2>Project <span>Saya</span></h2>
+          <p>Beberapa project yang pernah saya kerjakan</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="img/projectiot.png" alt="IoT Attendance System" />
+            </div>
+
+            <div class="project-content">
+              <h3>IoT Attendance System</h3>
+
+              <p>
+                IoT Sensor Jarak merupakan project berbasis Internet of Things
+                yang menggunakan sensor jarak untuk mendeteksi jarak suatu objek
+                secara otomatis. Data hasil pembacaan sensor dapat digunakan
+                untuk mengetahui keberadaan atau jarak objek secara real-time.
+                Project ini merupakan penerapan teknologi IoT dengan
+                menggabungkan perangkat sensor dan mikrokontroler untuk
+                melakukan proses pendeteksian.
+              </p>
+
+              <a href="#" class="project-link"> Lihat Project → </a>
+            </div>
+          </div>
+
+          <!-- PROJECT 2 FRONTEND -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="img/project_frontend.png" alt="Project Frontend" />
+            </div>
+
+            <div class="project-content">
+              <h3>Project Frontend</h3>
+
+              <p>
+                Pengembangan antarmuka website yang berfungsi sebagai tampilan
+                utama bagi pengguna. Project ini berfokus pada desain responsif,
+                interaktif, dan mudah digunakan dengan teknologi HTML, CSS,
+                JavaScript, React, atau Next.js.
+              </p>
+
+              <a href="#" class="project-link"> Lihat Project → </a>
+            </div>
+          </div>
+
+          <!-- PROJECT 3 BACKEND -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="img/project_backend.png" alt="Project Backend" />
+            </div>
+
+            <div class="project-content">
+              <h3>Project Backend</h3>
+
+              <p>
+                Pengembangan sistem backend yang menangani proses bisnis,
+                pengolahan data, autentikasi pengguna, serta komunikasi antara
+                aplikasi frontend dan database melalui REST API menggunakan
+                Node.js dan NestJS.
+              </p>
+
+              <a href="#" class="project-link"> Lihat Project → </a>
+            </div>
+          </div>
+
+          <!-- PROJECT 5 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="img/web_desain.png" alt="Portfolio Website" />
+            </div>
+
+            <div class="project-content">
+              <h3>Portfolio Website</h3>
+
+              <p>
+                Website portfolio pribadi yang menampilkan informasi, keahlian,
+                serta berbagai project yang telah dikerjakan. Website ini dibuat
+                dengan desain modern, responsif, animasi interaktif, dan fitur
+                dark mode.
+              </p>
+
+              <a href="#" class="project-link"> Lihat Project → </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <div class="contact-box">
+          <div class="section-title">
+            <h2>Mari <span>Terhubung</span></h2>
+          </div>
+
+          <p>
+            Tertarik untuk bekerja sama atau ingin mengetahui lebih lanjut
+            mengenai project yang saya kerjakan? Jangan ragu untuk menghubungi
+            saya.
+          </p>
+
+          <a href="alditaher1605@gmail.com" class="btn btn-primary">
+            <i class="fa-solid fa-envelope"></i> Kirim Email
+          </a>
+
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/user16_al?stkn=YTg3NHRzOGF1cGFp"
+              title="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://github.com/ALLLINFORMATICS/GraduationDhifah/commits?author=ALLLINFORMATICS"
+              title="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/aldi-taher-a9082140a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              title="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>© 2026 Aldi Setiapuji. Faculty Of Engineering.</footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      /* DARK LIGHT MODE */
+
+      const themeToggle = document.getElementById("themeToggle");
+      const icon = themeToggle.querySelector("i");
+
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+
+        if (document.body.classList.contains("light-mode")) {
+          icon.className = "fa-solid fa-sun";
+        } else {
+          icon.className = "fa-solid fa-moon";
+        }
+      });
+
+      /* TYPING EFFECT */
+
+      const texts = [
+        "Web Developer",
+        "IoT Enthusiast",
+        "Backend Developer",
+        "Frontend Developer",
+      ];
+
+      let textIndex = 0;
+      let characterIndex = 0;
+
+      const typingElement = document.getElementById("typing");
+
+      function typeEffect() {
+        if (characterIndex < texts[textIndex].length) {
+          typingElement.textContent += texts[textIndex].charAt(characterIndex);
+
+          characterIndex++;
+
+          setTimeout(typeEffect, 100);
+        } else {
+          setTimeout(deleteEffect, 2000);
+        }
+      }
+
+      function deleteEffect() {
+        if (characterIndex > 0) {
+          typingElement.textContent = texts[textIndex].substring(
+            0,
+            characterIndex - 1
+          );
+
+          characterIndex--;
+
+          setTimeout(deleteEffect, 50);
+        } else {
+          textIndex++;
+
+          if (textIndex >= texts.length) {
+            textIndex = 0;
+          }
+
+          setTimeout(typeEffect, 500);
+        }
+      }
+
+      typeEffect();
+
+      /* SCROLL REVEAL */
+
+      function revealOnScroll() {
+        const reveals = document.querySelectorAll(".reveal");
+
+        reveals.forEach((element) => {
+          const windowHeight = window.innerHeight;
+
+          const elementTop = element.getBoundingClientRect().top;
+
+          const visiblePoint = 100;
+
+          if (elementTop < windowHeight - visiblePoint) {
+            element.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+
+      revealOnScroll();
+    </script>
+  </body>
+</html>
