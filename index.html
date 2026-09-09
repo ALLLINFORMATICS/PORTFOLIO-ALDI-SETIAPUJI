@@ -479,6 +479,67 @@
         font-weight: 600;
       }
       /* ===============================
+       CERTIFICATES
+      =============================== */
+
+      .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .certificate-card {
+        overflow: hidden;
+        border-radius: 20px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        transition: 0.4s;
+      }
+
+      .certificate-card:hover {
+        transform: translateY(-12px);
+        border-color: var(--primary);
+      }
+
+      .certificate-image {
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .certificate-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.5s ease;
+      }
+
+      .certificate-card:hover .certificate-image img {
+        transform: scale(1.1);
+      }
+
+      .certificate-content {
+        padding: 25px;
+      }
+
+      .certificate-content h3 {
+        margin-bottom: 12px;
+      }
+
+      .certificate-content p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .certificate-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      /* ===============================
        CONTACT
     =============================== */
 
@@ -642,6 +703,7 @@
           <li><a href="#about">Tentang</a></li>
           <li><a href="#skills">Keahlian</a></li>
           <li><a href="#projects">Project</a></li>
+          <li><a href="#certificates">Sertifikat</a></li>
           <li><a href="#contact">Kontak</a></li>
         </ul>
 
@@ -860,6 +922,85 @@
               </p>
 
               <a href="#" class="project-link"> Lihat Project → </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="reveal">
+      <div class="container">
+        <div class="section-title">
+          <h2>Sertifikat <span>Saya</span></h2>
+          <p>Beberapa sertifikat dan pencapaian yang saya miliki</p>
+        </div>
+
+        <div class="certificates-grid">
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="img/Sertifikat1.jpeg" alt="Sertifikat 1" />
+            </div>
+            <div class="certificate-content">
+              <h3>Sertifikat 1</h3>
+              <p>Deskripsi singkat mengenai sertifikat atau pencapaian.</p>
+              <a
+                href="img/Sertifikat1.jpeg"
+                target="_blank"
+                class="certificate-link"
+              >
+                Lihat Sertifikat →
+              </a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="img/Sertifikat2.png" alt="Sertifikat 2" />
+            </div>
+            <div class="certificate-content">
+              <h3>Sertifikat 2</h3>
+              <p>Deskripsi singkat mengenai sertifikat atau pencapaian.</p>
+              <a
+                href="img/Sertifikat2.png"
+                target="_blank"
+                class="certificate-link"
+              >
+                Lihat Sertifikat →
+              </a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="img/sertifikat3.png" alt="Sertifikat 3" />
+            </div>
+            <div class="certificate-content">
+              <h3>Sertifikat 3</h3>
+              <p>Deskripsi singkat mengenai sertifikat atau pencapaian.</p>
+              <a
+                href="img/sertifikat3.png"
+                target="_blank"
+                class="certificate-link"
+              >
+                Lihat Sertifikat →
+              </a>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="img/sertifikat4.png" alt="Sertifikat 2" />
+            </div>
+            <div class="certificate-content">
+              <h3>Sertifikat 4</h3>
+              <p>Deskripsi singkat mengenai sertifikat atau pencapaian.</p>
+              <a
+                href="img/sertifikat4.png"
+                target="_blank"
+                class="certificate-link"
+              >
+                Lihat Sertifikat →
+              </a>
             </div>
           </div>
         </div>
